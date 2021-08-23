@@ -1,0 +1,38 @@
+<ng-container *ngIf="lists!=''">
+    <div class="container">
+        <table class="table table-striped">
+                <tr>
+                    <th>City</th>
+                    <th>Sign</th>
+                    <th>Temp</th>
+                    <th>Description</th>
+                </tr>
+                <button (click)="emptyList()" class="butto">Remove All</button>
+            <tbody>
+                <tr *ngFor="let list of lists">
+                    <td style="padding-top:30px">{{list.name}}</td>
+                    <td><img src="https://openweathermap.org/img/wn/{{list.weather[0].icon}}@2x.png" alt="W3Schools.com" style="width:80px;height:80px;"></td>
+                    <td style="padding-top:30px">{{list.temp_celcius}}<span>&#176;</span></td>
+                    <td style="padding-top:30px">{{list.weather[0].description}}</td>
+                    <td>
+                        <button (click)="removeItem(list)" style="font-size:24px;background-color:rgb(35, 43, 150);border-radius:25px"><i class="fa" style="font-size:25px;color:red">&#xf004;</i></button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</ng-container>
+<ng-container *ngIf="lists==''">
+    <div class="container">
+        <div class="card">
+            <h1 class="card-title">My Recent List</h1>
+            <div class="center">
+              <i class="fas fa-dizzy" style="font-size: 80px;"></i><br><br><br>
+              <h1>Your List is empty</h1><br>
+              <h2>Add List</h2>
+            </div>
+        </div>
+    </div>
+</ng-container>
+
+

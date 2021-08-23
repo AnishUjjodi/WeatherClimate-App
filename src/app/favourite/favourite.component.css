@@ -1,0 +1,42 @@
+p{
+  display: inline;
+  padding: 20px ;
+}
+
+a:link {
+  color: white; 
+}
+
+a:hover {
+  color: black;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+.butto{
+  padding:8px;
+  background-color: lightskyblue;
+  text-align: center;
+  font-size: 20px;
+  margin-bottom:10px;
+}
+
+.container{
+  font-size: 25px;
+  text-align: center;
+}
+
+.card{
+  height: 60vh;
+  margin: 25px;
+  padding:25px;
+  background-color:rgb(21, 133, 197);
+}
+
+.center{
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  text-align:center;
+}

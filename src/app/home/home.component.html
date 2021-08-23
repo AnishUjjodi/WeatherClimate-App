@@ -1,0 +1,54 @@
+<br>
+<app-header (parentFunction)="parentFunction($event)"></app-header>
+<div id ="divWeatherMain">
+    <div *ngIf="WeatherData.isDay" class="weatherWidgetRow">
+      <i class="fas fa-10x fa-sun sun"></i>
+    </div>
+    <div *ngIf="!WeatherData.isDay" class="weatherWidgetRow">
+        <i class="fas fa-10x fa-moon moon"></i>
+    </div>
+    <div  class="weatherWidgetRow cloudDiv">
+        <i class="fas fa-10x fa-cloud cloud"></i>
+    </div>
+    <div class="weatherWidgetRow" style="font-size:32px;margin-top:5px;">{{WeatherData?.name}}</div>
+    <div class="weatherWidgetRow" style="font-size:20px;">Temp : {{WeatherData?.temp_celcius}}<span>&#176;</span></div>
+    <div class="weatherWidgetRow" style="font-size:18px;">Min-Max : {{WeatherData?.temp_min}}<span>&#176;</span>/{{WeatherData?.temp_max}}<span>&#176;</span></div>
+    <div class="weatherWidgetRow" style="font-size:22px;">Feels Like : {{WeatherData?.temp_feels_like}}<span>&#176;</span></div>
+    <div class="weatherWidgetRow" style="font-size:20px;">Humidity : {{WeatherData?.main.humidity}}%</div>
+    <div class="weatherWidgetRow" style="font-size:20px;">Description : {{WeatherData?.weather[0].description}}</div>
+    <div class="display">
+        <br>
+        <button (click)="addtolist()" style="font-size:24px;background-color:rgb(18, 61, 90);border-radius:25px"><i class="fa" style="font-size:25px;color:red">&#xf004;</i></button>
+    </div>
+</div>
+<br><br><br>
+<div class="main">
+    <div class="bottom">
+        <h2 style="text-align: center;padding:12%;">Temp</h2>     
+        <h2 style="text-align: center;font-size:35px;"><i class="fas fa-temperature-low"></i> {{WeatherData?.temp_celcius}}<span>&#176;</span></h2>
+    </div>
+    <div class="bottom">
+        <h2 style="text-align: center;padding:12%;">Humidity</h2>
+        <h2 style="text-align: center;font-size:35px;"><i class="fas fa-tint"></i> {{WeatherData?.main.humidity}}%</h2>
+    </div>
+    <div class="bottom">
+        <h2 style="text-align: center;padding:12%;">Wind </h2>
+        <h2 style="text-align: center;font-size:25px;"><i class="fas fa-wind"></i> {{WeatherData?.wind.speed}}mph</h2>
+    </div>
+    <div class="bottom">
+        <h2 style="text-align: center;padding:12%;">Visibility</h2>
+        <h2 style="text-align: center;font-size:25px;"><i class="fas fa-eye"></i> {{WeatherData?.visibility}}</h2></div>
+        <div class="bottom">
+            <h2 style="text-align: center;padding:12%;">Pressure</h2>
+            <h2 style="text-align: center;font-size:25px;"><i class="fas fa-eye"></i> {{WeatherData?.main.pressure}}hpa</h2>
+        </div>
+</div>
+
+
+
+
+
+
+
+
+
